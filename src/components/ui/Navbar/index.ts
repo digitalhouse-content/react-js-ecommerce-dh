@@ -1,1 +1,1 @@
-import * from "./Navbar"
+export * from './Navbar';

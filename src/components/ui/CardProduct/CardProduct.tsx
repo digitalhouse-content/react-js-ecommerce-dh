@@ -1,6 +1,35 @@
+import { useContext, FC } from 'react';
 import styles from "./CardProduct.module.css"
+import { CartContext } from '../../../context/CartContext';
+import { Product } from '../../../interface';
 
-export const CardProduct = ({product}) => {
+
+interface Props{
+	product: Product
+}
+
+interface CarProduct{
+	id: number;
+	name: string;
+	image: string;
+	quantity: number
+}
+
+export const CardProduct: FC<Props> = ({ product }) => {
+	
+	const { dispatch } = useContext(CartContext)
+	
+	const item: CarProduct = {
+		id: product.id,
+		name: product.name,
+		image: product.image,
+		quantity:1
+	}
+
+	const addToCart = (item: CarProduct) => {
+		dispatch({type: "ADD_TO_CART", payload: item})
+	}
+	
 	return (
 		<div className={styles.cardContainer}>
 			<img className={styles.cardImage} src={product.image} alt={product.name} />
@@ -12,7 +41,7 @@ export const CardProduct = ({product}) => {
 						price, <small>00</small>
 					</p>
         </div>
-        <button className={styles.cardButton}>Add to cart</button>
+        <button className={styles.cardButton} onClick={() => addToCart(item)}>Add to cart</button>
 			</div>
 		</div>
 	);

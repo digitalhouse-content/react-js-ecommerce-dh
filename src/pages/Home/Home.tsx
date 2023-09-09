@@ -1,26 +1,13 @@
-import { Hero } from '../../components/ui/Hero'
-import { useState, useEffect } from 'react';
-import styles from "./Home.module.css"
+import { useQuery } from 'react-query';
+import { Toaster } from 'sonner';
 import { CardProduct } from '../../components/ui/CardProduct';
+import { Hero } from '../../components/ui/Hero';
 import { getProducts } from '../../service';
-import { Product } from '../../interface';
-import { Toaster } from 'sonner'
+import styles from "./Home.module.css";
 
 const Home = () => {
 
-  const [products, setProducts] = useState<Product[]>([])
-  const [error, setError] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    getProducts().then((data) => {
-      setProducts(data)
-    }).catch(() => {
-      setError(true)
-    }).finally(() => {
-      setIsLoading(false)
-    })
-  }, [])
+  const {data, isLoading, error } = useQuery('products', getProducts)
 
   return (
     <>
@@ -29,7 +16,7 @@ const Home = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>Something went wrong</p>}
       <div className={styles.container}>
-        {products.map((product) => (
+        {data?.map((product) => (
             <CardProduct key={product.tail} product={product} />
           ))}
       </div>

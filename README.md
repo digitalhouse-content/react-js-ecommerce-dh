@@ -1,27 +1,56 @@
-# React + TypeScript + Vite
+# Ecommerce-DH React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+El objetivo de este proyecto es afianzar los conocimientos del curso React + Redux con TypeScript, específicamente en el contexto de React.js y sus herramientas relacionadas. A lo largo de las clases, se abordan varios módulos, cada uno enfocado en un aspecto clave del desarrollo web con React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demostración
 
-## Expanding the ESLint configuration
+![Demostración](https://github.com/humbertodrc/api-vercel-ejemplo/assets/63797901/0e0ade00-d5b9-438d-8d17-318e1b7838a7)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tabla de Contenidos
 
-- Configure the top-level `parserOptions` property like this:
+- Intro al Proyecto
+- React Router
+- JSON Server
+- Uso De Hooks useState y useEffect
+- Fetching Data
+- Uso de Hooks useContext y useReducer
+- TypeScript
+- Redux
+- Dispatching Actions
+- Integración de otras librerías
+- Sonner
+- React Credit Cards 2
+- React Query
+- React Query Devtools
+- React Query Pagination
+- React Query Mutations
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+
+## Tecnologías
+
+Este proyecto utiliza las siguientes tecnologías principales:
+
+- React.js
+- React Credit Cards 2
+- React Router Dom
+- Sonner
+- React Query
+
+
+## Instalación
+
+
+```bash
+# Clona el repositorio
+git clone https://github.com/digitalhouse-content/react-js-ecommerce-dh.git
+
+# Instala las dependencias
+npm install
+
+# Corre el server de los productos
+npm run server
+
+# Corre la aplicación
+npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
